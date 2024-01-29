@@ -1,4 +1,5 @@
 const express = require("express");
+var bodyParser = require('body-parser')
 const app = express();
 
 app.set("json spaces", 2);
@@ -13,6 +14,7 @@ let data = [];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 app.get("/data", (req, res) => {
   res.send(data);

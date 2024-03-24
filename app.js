@@ -21,6 +21,7 @@ app.get("/data", (req, res) => {
 });
 
 app.get("/data/:id", (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
   let id = req.params.id;
   if (data[id]) {
     res.send(data[id]);
